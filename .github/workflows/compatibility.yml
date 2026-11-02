@@ -1,0 +1,37 @@
+# Builds and tests against every Minecraft version the jar claims to support, so a change that
+# only works on the newest version cannot slip in. Keep this list in step with the "minecraft"
+# range in fabric.mod.json and minecraft_range in gradle.properties.
+
+name: compatibility
+on: [pull_request, push]
+
+jobs:
+  compatibility:
+    name: minecraft ${{ matrix.minecraft }}
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - minecraft: '26.1'
+            fabric_api: '0.145.1+26.1'
+          - minecraft: '26.1.1'
+            fabric_api: '0.145.4+26.1.1'
+          - minecraft: '26.1.2'
+            fabric_api: '0.155.3+26.1.2'
+          - minecraft: '26.2'
+            fabric_api: '0.161.0+26.2'
+          - minecraft: '26.3'
+            fabric_api: '0.165.0+26.3'
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v6
+      - name: setup jdk
+        uses: actions/setup-java@v5
+        with:
+          java-version: '25'
+          distribution: 'microsoft'
+      - name: make gradle wrapper executable
+        run: chmod +x ./gradlew
+      - name: build and test
+        run: ./gradlew build -Pminecraft_version=${{ matrix.minecraft }} -Pfabric_api_version=${{ matrix.fabric_api }}
