@@ -63,6 +63,11 @@ java {
 	targetCompatibility = JavaVersion.VERSION_25
 }
 
+// Names the jars like where-death-1.0.0+26.1-26.3.jar without changing the mod's own version.
+tasks.withType(Jar).configureEach {
+	archiveVersion = "${project.version}+${project.minecraft_range}"
+}
+
 jar {
 	def projectName = project.name
 	inputs.property "projectName", projectName
