@@ -1,0 +1,31 @@
+{
+	"schemaVersion": 1,
+	"id": "where-death",
+	"version": "${version}",
+	"name": "where-death",
+	"description": "Tells you where you died.",
+	"authors": [
+		"mystwiz"
+	],
+	"contact": {
+		"homepage": "https://mystwiz.net/",
+		"sources": "https://github.com/MysticalWizard/where-death"
+	},
+	"license": "MIT",
+	"icon": "assets/where-death/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.mystwiz.wheredeath.WhereDeath"
+		],
+		"client": [
+			"net.mystwiz.wheredeath.client.WhereDeathClient"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": ">=26.1 <26.4-",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
