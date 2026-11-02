@@ -1,4 +1,14 @@
-# where-death
+<p align="center">
+  <img src=".github/banner.svg" alt="where-death" width="100%">
+</p>
+
+<p align="center">
+  <a href="https://github.com/MysticalWizard/where-death/actions/workflows/build.yml"><img src="https://github.com/MysticalWizard/where-death/actions/workflows/build.yml/badge.svg" alt="build"></a>
+  <a href="https://github.com/MysticalWizard/where-death/actions/workflows/compatibility.yml"><img src="https://github.com/MysticalWizard/where-death/actions/workflows/compatibility.yml/badge.svg" alt="compatibility"></a>
+  <img src="https://img.shields.io/badge/minecraft-26.1%E2%80%9326.3-62b47a" alt="Minecraft 26.1–26.3">
+  <img src="https://img.shields.io/badge/loader-fabric-dbd0b4" alt="Fabric">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT license"></a>
+</p>
 
 Tells you where you died. After you respawn you get a chat line like:
 
